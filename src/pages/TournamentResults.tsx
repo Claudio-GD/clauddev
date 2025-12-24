@@ -12,6 +12,11 @@ export function TournamentResults() {
 
     useEffect(() => {
         document.title = "Torneo FRD Godzilla -Tabla de posiciones"
+        const link = document.querySelector("link[rel~='icon']");
+
+        if (link) {
+            link.setAttribute("href", "/logo.png");
+        }
     }, [])
 
     useEffect(() => {

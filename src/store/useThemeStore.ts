@@ -9,7 +9,7 @@ type ThemeState = {
 export const useThemeStore = create<ThemeState>()(
     persist(
         (set) => ({
-            isLight: false,
+            isLight: true,
             toggleTheme: () => set((state) => ({ isLight: !state.isLight })),
         }),
         {
