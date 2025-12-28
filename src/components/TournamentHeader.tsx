@@ -7,7 +7,7 @@ export const TournamentHeader = () => (
             <img alt="Nissan R-34 Godzilla" className="w-full h-full object-cover object-center opacity-20 mix-blend-multiply" src={Godzilla} />
         </div>
         <div className="relative z-10 flex flex-col gap-2 max-w-2xl">
-            <div className="flex items-center gap-2 text-primary text-sm font-bold uppercase tracking-wider">
+            <div className="flex items-center gap-2 text-text md:text-primary text-sm font-bold uppercase tracking-wider">
                 <span className="material-symbols-outlined text-[16px]">trophy</span>
                 Temporada Diciembre 2025 - Enero 2026
             </div>
