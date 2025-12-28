@@ -43,6 +43,7 @@ export const ResultTable = () => {
 
     return (
         <>
+            <Leyend />
             <div className="w-full bg-surface border border-surface rounded-2xl overflow-hidden shadow-lg shadow-surface/50">
                 <div className="overflow-x-auto">
                     <table className="w-full border-collapse">
@@ -51,7 +52,6 @@ export const ResultTable = () => {
                     </table>
                 </div>
             </div>
-            <Leyend />
             <ResultRace open={open} setOpen={setOpen} pilot={pilot} raceResult={raceResult} />
         </>
     )
