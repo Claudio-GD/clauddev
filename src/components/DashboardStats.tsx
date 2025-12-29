@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NextRace } from "./NextRace";
+import { nextRace } from "@data/nextRace";
 
 export const DashboardStats = () => {
     const [open, setOpen] = useState(false);
@@ -11,17 +12,17 @@ export const DashboardStats = () => {
     return (
         <>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-                <div className="bg-surface border border-surface rounded-2xl p-4 flex items-center gap-4 shadow-sm">
-                    <div className="size-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
-                        <span className="material-symbols-outlined">calendar_month</span>
-                    </div>
-                    <a href="#" onClick={handleClickNextRace} title="Ver siguiente carrera">
+                <a href="#" onClick={handleClickNextRace} title="Ver siguiente carrera">
+                    <div className="bg-surface border border-surface rounded-2xl p-4 flex items-center gap-4 shadow-sm">
+                        <div className="size-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
+                            <span className="material-symbols-outlined">calendar_month</span>
+                        </div>
                         <div>
                             <p className="text-text-muted text-xs font-medium uppercase">Próxima Carrera</p>
-                            <p className="text-text font-bold">Le Mans - 29 Dic 2025</p>
+                            <p className="text-text font-bold">{nextRace.name} - {nextRace.shortDate} {nextRace.year}</p>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                </a>
                 <div className="bg-surface border border-surface rounded-2xl p-4 flex items-center gap-4 shadow-sm">
                     <div className="size-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
                         <span className="material-symbols-outlined">leaderboard</span>
@@ -32,7 +33,7 @@ export const DashboardStats = () => {
                     </div>
                 </div>
             </div>
-            <NextRace open={open} setOpen={setOpen} />
+            <NextRace open={open} setOpen={setOpen} nextRace={nextRace} />
         </>
     )
 }
