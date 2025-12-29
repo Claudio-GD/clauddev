@@ -6,7 +6,7 @@ export const DashboardStats = () => (
             </div>
             <div>
                 <p className="text-text-muted text-xs font-medium uppercase">Próxima Carrera</p>
-                <p className="text-text font-bold">Le Mans - 25 Dic 2025</p>
+                <p className="text-text font-bold">Le Mans - 29 Dic 2025</p>
             </div>
         </div>
         <div className="bg-surface border border-surface rounded-2xl p-4 flex items-center gap-4 shadow-sm">
