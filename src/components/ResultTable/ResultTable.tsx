@@ -64,6 +64,23 @@ export const ResultTable = () => {
             stops: 1,
             tires: 1
         },
+        {
+            id: "4",
+            name: "Le Mans",
+            circuit: {
+                type: "GP",
+                large: "13.626",
+                corners: 38,
+                laps: 10,
+                location: "Le Mans, Francia",
+            },
+            shortDate: "29 Dic",
+            year: "2025",
+            time: "13:00",
+            weather: "Despejado",
+            stops: 1,
+            tires: 2
+        }
     ]
 
     const handleClickResume = (pilot: Pilot, raceResult: RaceResult) => {
