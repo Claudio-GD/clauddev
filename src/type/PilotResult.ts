@@ -1,16 +1,10 @@
+import type { Race } from "./Race";
+
 export type Pilot = {
     id: string;
     name: string;
     team: string;
     points: number;
-}
-
-export type Race = {
-    id: string;
-    name: string;
-    shortDate: string;
-    year: string;
-    circuit: string;
 }
 
 type Penalties = {
