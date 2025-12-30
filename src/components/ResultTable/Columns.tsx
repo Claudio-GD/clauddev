@@ -1,4 +1,4 @@
-import type { Race } from "@type/PilotResult";
+import type { Race } from "@type/Race";
 
 type Props = {
     races: Race[];
