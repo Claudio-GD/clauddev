@@ -15,7 +15,17 @@ export const rows: PilotResult[] = [
                     name: "Suzuka",
                     shortDate: "08 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Suzuka",
+                        corners: 1,
+                        laps: 1,
+                        location: "Japón"
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: '2', points: 31,
                 penalties: [],
                 additionalPoints: {
@@ -30,7 +40,17 @@ export const rows: PilotResult[] = [
                     name: "Sebring",
                     shortDate: "15 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Sebring",
+                        corners: 1,
+                        laps: 1,
+                        location: "EE.UU."
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: '2', points: 31,
                 penalties: [],
                 additionalPoints: {
@@ -45,7 +65,17 @@ export const rows: PilotResult[] = [
                     name: "Silverstone",
                     shortDate: "22 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Silverstone",
+                        corners: 1,
+                        laps: 1,
+                        location: "Reino Unido"
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: '2', points: 31,
                 penalties: [],
                 additionalPoints: {
@@ -69,7 +99,17 @@ export const rows: PilotResult[] = [
                     name: "Suzuka",
                     shortDate: "08 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Suzuka",
+                        corners: 1,
+                        laps: 1,
+                        location: "Japón"
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: '1', points: 35,
                 penalties: [],
                 additionalPoints: {
@@ -84,7 +124,17 @@ export const rows: PilotResult[] = [
                     name: "Sebring",
                     shortDate: "15 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Sebring",
+                        corners: 1,
+                        laps: 1,
+                        location: "EE.UU."
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: '3', points: 28,
                 penalties: [],
                 additionalPoints: {
@@ -99,7 +149,17 @@ export const rows: PilotResult[] = [
                     name: "Silverstone",
                     shortDate: "22 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Silverstone",
+                        corners: 1,
+                        laps: 1,
+                        location: "Reino Unido"
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: '9', points: 16,
                 penalties: [],
                 additionalPoints: {
@@ -123,7 +183,17 @@ export const rows: PilotResult[] = [
                     name: "Suzuka",
                     shortDate: "08 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Suzuka",
+                        corners: 1,
+                        laps: 1,
+                        location: "Japón"
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: '4', points: 26,
                 penalties: [],
                 additionalPoints: {
@@ -138,7 +208,17 @@ export const rows: PilotResult[] = [
                     name: "Sebring",
                     shortDate: "15 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Sebring",
+                        corners: 1,
+                        laps: 1,
+                        location: "EE.UU."
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: '6', points: 22,
                 penalties: [],
                 additionalPoints: {
@@ -153,7 +233,17 @@ export const rows: PilotResult[] = [
                     name: "Silverstone",
                     shortDate: "22 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Silverstone",
+                        corners: 1,
+                        laps: 1,
+                        location: "Reino Unido"
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: 'DNF', points: 0,
                 penalties: [],
                 additionalPoints: {
@@ -177,7 +267,17 @@ export const rows: PilotResult[] = [
                     name: "Suzuka",
                     shortDate: "08 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Suzuka",
+                        corners: 1,
+                        laps: 1,
+                        location: "Japón"
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: '7', points: 20,
                 penalties: [],
                 additionalPoints: {
@@ -192,7 +292,17 @@ export const rows: PilotResult[] = [
                     name: "Sebring",
                     shortDate: "15 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Sebring",
+                        corners: 1,
+                        laps: 1,
+                        location: "EE.UU."
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: '7', points: 20,
                 penalties: [],
                 additionalPoints: {
@@ -207,7 +317,17 @@ export const rows: PilotResult[] = [
                     name: "Silverstone",
                     shortDate: "22 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Silverstone",
+                        corners: 1,
+                        laps: 1,
+                        location: "Reino Unido"
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: '12', points: 10,
                 penalties: [],
                 additionalPoints: {
@@ -231,7 +351,17 @@ export const rows: PilotResult[] = [
                     name: "Suzuka",
                     shortDate: "08 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Suzuka",
+                        corners: 1,
+                        laps: 1,
+                        location: "Japón"
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: 'DNF', points: 0,
                 penalties: [],
                 additionalPoints: {
@@ -246,7 +376,17 @@ export const rows: PilotResult[] = [
                     name: "Sebring",
                     shortDate: "15 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Sebring",
+                        corners: 1,
+                        laps: 1,
+                        location: "EE.UU."
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: '1', points: 35,
                 penalties: [],
                 additionalPoints: {
@@ -261,7 +401,17 @@ export const rows: PilotResult[] = [
                     name: "Silverstone",
                     shortDate: "22 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Silverstone",
+                        corners: 1,
+                        laps: 1,
+                        location: "Reino Unido"
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: '1', points: 35,
                 penalties: [],
                 additionalPoints: {
@@ -285,7 +435,17 @@ export const rows: PilotResult[] = [
                     name: "Suzuka",
                     shortDate: "08 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Suzuka",
+                        corners: 1,
+                        laps: 1,
+                        location: "Japón"
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: '6', points: 22,
                 penalties: [],
                 additionalPoints: {
@@ -300,7 +460,17 @@ export const rows: PilotResult[] = [
                     name: "Sebring",
                     shortDate: "15 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Sebring",
+                        corners: 1,
+                        laps: 1,
+                        location: "EE.UU."
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: '11', points: 12,
                 penalties: [],
                 additionalPoints: {
@@ -315,7 +485,17 @@ export const rows: PilotResult[] = [
                     name: "Silverstone",
                     shortDate: "22 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Silverstone",
+                        corners: 1,
+                        laps: 1,
+                        location: "Reino Unido"
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: '8', points: 18,
                 penalties: [],
                 additionalPoints: {
@@ -339,7 +519,17 @@ export const rows: PilotResult[] = [
                     name: "Suzuka",
                     shortDate: "08 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Suzuka",
+                        corners: 1,
+                        laps: 1,
+                        location: "Japón"
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: '11', points: 12,
                 penalties: [],
                 additionalPoints: {
@@ -354,7 +544,17 @@ export const rows: PilotResult[] = [
                     name: "Sebring",
                     shortDate: "15 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Sebring",
+                        corners: 1,
+                        laps: 1,
+                        location: "EE.UU."
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: '8', points: 18,
                 penalties: [],
                 additionalPoints: {
@@ -369,7 +569,17 @@ export const rows: PilotResult[] = [
                     name: "Silverstone",
                     shortDate: "22 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Silverstone",
+                        corners: 1,
+                        laps: 1,
+                        location: "Reino Unido"
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: '4', points: 26,
                 penalties: [],
                 additionalPoints: {
@@ -393,7 +603,17 @@ export const rows: PilotResult[] = [
                     name: "Suzuka",
                     shortDate: "08 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Suzuka",
+                        corners: 1,
+                        laps: 1,
+                        location: "Japón"
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: '8', points: 18,
                 penalties: [],
                 additionalPoints: {
@@ -408,7 +628,17 @@ export const rows: PilotResult[] = [
                     name: "Sebring",
                     shortDate: "15 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Sebring",
+                        corners: 1,
+                        laps: 1,
+                        location: "EE.UU."
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: '10', points: 14,
                 penalties: [],
                 additionalPoints: {
@@ -423,7 +653,17 @@ export const rows: PilotResult[] = [
                     name: "Silverstone",
                     shortDate: "22 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Silverstone",
+                        corners: 1,
+                        laps: 1,
+                        location: "Reino Unido"
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: '15', points: 4,
                 penalties: [],
                 additionalPoints: {
@@ -447,7 +687,17 @@ export const rows: PilotResult[] = [
                     name: "Suzuka",
                     shortDate: "08 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Suzuka",
+                        corners: 1,
+                        laps: 1,
+                        location: "Japón"
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: '10', points: 14,
                 penalties: [{
                     detail: "Penalidad por chocar a FRD Berserkr, perdiendo este el control y sin devolver posición",
@@ -466,7 +716,17 @@ export const rows: PilotResult[] = [
                     name: "Sebring",
                     shortDate: "15 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Sebring",
+                        corners: 1,
+                        laps: 1,
+                        location: "EE.UU."
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: '9', points: 16,
                 penalties: [],
                 additionalPoints: {
@@ -481,7 +741,17 @@ export const rows: PilotResult[] = [
                     name: "Silverstone",
                     shortDate: "22 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Silverstone",
+                        corners: 1,
+                        laps: 1,
+                        location: "Reino Unido"
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: '3', points: 28,
                 penalties: [],
                 additionalPoints: {
@@ -505,7 +775,17 @@ export const rows: PilotResult[] = [
                     name: "Suzuka",
                     shortDate: "08 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Suzuka",
+                        corners: 1,
+                        laps: 1,
+                        location: "Japón"
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: '3', points: 28,
                 penalties: [],
                 additionalPoints: {
@@ -520,7 +800,17 @@ export const rows: PilotResult[] = [
                     name: "Sebring",
                     shortDate: "15 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Sebring",
+                        corners: 1,
+                        laps: 1,
+                        location: "EE.UU."
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: 'DNS', points: 0,
                 penalties: [],
                 additionalPoints: {
@@ -535,7 +825,17 @@ export const rows: PilotResult[] = [
                     name: "Silverstone",
                     shortDate: "22 Dic",
                     year: "2025",
-                    circuit: "GP"
+                    circuit: {
+                        type: "GP",
+                        large: "Silverstone",
+                        corners: 1,
+                        laps: 1,
+                        location: "Reino Unido"
+                    },
+                    time: "20:00",
+                    weather: "Despejado",
+                    stops: 1,
+                    tires: 1
                 }, position: 'DNS', points: 0,
                 penalties: [],
                 additionalPoints: {
@@ -558,7 +858,17 @@ export const rows: PilotResult[] = [
                 name: "Suzuka",
                 shortDate: "08 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Suzuka",
+                    corners: 1,
+                    laps: 1,
+                    location: "Japón"
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: 'DNF', points: 0,
             penalties: [],
             additionalPoints: {
@@ -572,7 +882,17 @@ export const rows: PilotResult[] = [
                 name: "Sebring",
                 shortDate: "15 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Sebring",
+                    corners: 1,
+                    laps: 1,
+                    location: "EE.UU."
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: '4', points: 26,
             penalties: [],
             additionalPoints: {
@@ -586,7 +906,17 @@ export const rows: PilotResult[] = [
                 name: "Silverstone",
                 shortDate: "22 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Silverstone",
+                    corners: 1,
+                    laps: 1,
+                    location: "Reino Unido"
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: '7', points: 20,
             penalties: [],
             additionalPoints: {
@@ -609,7 +939,17 @@ export const rows: PilotResult[] = [
                 name: "Suzuka",
                 shortDate: "08 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Suzuka",
+                    corners: 1,
+                    laps: 1,
+                    location: "Japón"
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: '9', points: 16,
             penalties: [],
             additionalPoints: {
@@ -623,7 +963,17 @@ export const rows: PilotResult[] = [
                 name: "Sebring",
                 shortDate: "15 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Sebring",
+                    corners: 1,
+                    laps: 1,
+                    location: "EE.UU."
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: '13', points: 8,
             penalties: [],
             additionalPoints: {
@@ -637,7 +987,17 @@ export const rows: PilotResult[] = [
                 name: "Silverstone",
                 shortDate: "22 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Silverstone",
+                    corners: 1,
+                    laps: 1,
+                    location: "Reino Unido"
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: '11', points: 12,
             penalties: [],
             additionalPoints: {
@@ -660,7 +1020,17 @@ export const rows: PilotResult[] = [
                 name: "Suzuka",
                 shortDate: "08 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Suzuka",
+                    corners: 1,
+                    laps: 1,
+                    location: "Japón"
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: '5', points: 24,
             penalties: [],
             additionalPoints: {
@@ -674,7 +1044,17 @@ export const rows: PilotResult[] = [
                 name: "Sebring",
                 shortDate: "15 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Sebring",
+                    corners: 1,
+                    laps: 1,
+                    location: "EE.UU."
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: 'DNF', points: 0,
             penalties: [],
             additionalPoints: {
@@ -688,7 +1068,17 @@ export const rows: PilotResult[] = [
                 name: "Silverstone",
                 shortDate: "22 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Silverstone",
+                    corners: 1,
+                    laps: 1,
+                    location: "Reino Unido"
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: 'DNS', points: 0,
             penalties: [],
             additionalPoints: {
@@ -711,7 +1101,17 @@ export const rows: PilotResult[] = [
                 name: "Suzuka",
                 shortDate: "08 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Suzuka",
+                    corners: 1,
+                    laps: 1,
+                    location: "Japón"
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: 'DNS', points: 0,
             penalties: [],
             additionalPoints: {
@@ -725,7 +1125,17 @@ export const rows: PilotResult[] = [
                 name: "Sebring",
                 shortDate: "15 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Sebring",
+                    corners: 1,
+                    laps: 1,
+                    location: "EE.UU."
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: '5', points: 24,
             penalties: [],
             additionalPoints: {
@@ -739,7 +1149,17 @@ export const rows: PilotResult[] = [
                 name: "Silverstone",
                 shortDate: "22 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Silverstone",
+                    corners: 1,
+                    laps: 1,
+                    location: "Reino Unido"
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: '5', points: 24,
             penalties: [],
             additionalPoints: {
@@ -762,7 +1182,17 @@ export const rows: PilotResult[] = [
                 name: "Suzuka",
                 shortDate: "08 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Suzuka",
+                    corners: 1,
+                    laps: 1,
+                    location: "Japón"
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: '12', points: 10,
             penalties: [],
             additionalPoints: {
@@ -776,7 +1206,17 @@ export const rows: PilotResult[] = [
                 name: "Sebring",
                 shortDate: "15 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Sebring",
+                    corners: 1,
+                    laps: 1,
+                    location: "EE.UU."
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: '14', points: 6,
             penalties: [],
             additionalPoints: {
@@ -790,7 +1230,17 @@ export const rows: PilotResult[] = [
                 name: "Silverstone",
                 shortDate: "22 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Silverstone",
+                    corners: 1,
+                    laps: 1,
+                    location: "Reino Unido"
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: '16', points: 2,
             penalties: [],
             additionalPoints: {
@@ -813,7 +1263,17 @@ export const rows: PilotResult[] = [
                 name: "Suzuka",
                 shortDate: "08 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Suzuka",
+                    corners: 1,
+                    laps: 1,
+                    location: "Japón"
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: '16', points: 2,
             penalties: [],
             additionalPoints: {
@@ -827,7 +1287,17 @@ export const rows: PilotResult[] = [
                 name: "Sebring",
                 shortDate: "15 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Sebring",
+                    corners: 1,
+                    laps: 1,
+                    location: "EE.UU."
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: '12', points: 10,
             penalties: [],
             additionalPoints: {
@@ -841,7 +1311,17 @@ export const rows: PilotResult[] = [
                 name: "Silverstone",
                 shortDate: "22 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Silverstone",
+                    corners: 1,
+                    laps: 1,
+                    location: "Reino Unido"
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: '6', points: 22,
             penalties: [],
             additionalPoints: {
@@ -864,7 +1344,17 @@ export const rows: PilotResult[] = [
                 name: "Suzuka",
                 shortDate: "08 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Suzuka",
+                    corners: 1,
+                    laps: 1,
+                    location: "Japón"
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: '13', points: 8,
             penalties: [],
             additionalPoints: {
@@ -878,7 +1368,17 @@ export const rows: PilotResult[] = [
                 name: "Sebring",
                 shortDate: "15 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Sebring",
+                    corners: 1,
+                    laps: 1,
+                    location: "EE.UU."
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: 'DNS', points: 0,
             penalties: [],
             additionalPoints: {
@@ -892,7 +1392,17 @@ export const rows: PilotResult[] = [
                 name: "Silverstone",
                 shortDate: "22 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Silverstone",
+                    corners: 1,
+                    laps: 1,
+                    location: "Reino Unido"
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: 'DNS', points: 0,
             penalties: [],
             additionalPoints: {
@@ -915,7 +1425,17 @@ export const rows: PilotResult[] = [
                 name: "Suzuka",
                 shortDate: "08 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Suzuka",
+                    corners: 1,
+                    laps: 1,
+                    location: "Japón"
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: '14', points: 6,
             penalties: [],
             additionalPoints: {
@@ -929,7 +1449,17 @@ export const rows: PilotResult[] = [
                 name: "Sebring",
                 shortDate: "15 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Sebring",
+                    corners: 1,
+                    laps: 1,
+                    location: "EE.UU."
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: '16', points: 2,
             penalties: [],
             additionalPoints: {
@@ -943,7 +1473,17 @@ export const rows: PilotResult[] = [
                 name: "Silverstone",
                 shortDate: "22 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Silverstone",
+                    corners: 1,
+                    laps: 1,
+                    location: "Reino Unido"
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: 'DNS', points: 0,
             penalties: [],
             additionalPoints: {
@@ -966,7 +1506,17 @@ export const rows: PilotResult[] = [
                 name: "Suzuka",
                 shortDate: "08 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Suzuka",
+                    corners: 1,
+                    laps: 1,
+                    location: "Japón"
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: '15', points: 4,
             penalties: [],
             additionalPoints: {
@@ -980,7 +1530,17 @@ export const rows: PilotResult[] = [
                 name: "Sebring",
                 shortDate: "15 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Sebring",
+                    corners: 1,
+                    laps: 1,
+                    location: "EE.UU."
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: 'DNS', points: 0,
             penalties: [],
             additionalPoints: {
@@ -994,7 +1554,17 @@ export const rows: PilotResult[] = [
                 name: "Silverstone",
                 shortDate: "22 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Silverstone",
+                    corners: 1,
+                    laps: 1,
+                    location: "Reino Unido"
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: '13', points: 8,
             penalties: [],
             additionalPoints: {
@@ -1017,7 +1587,17 @@ export const rows: PilotResult[] = [
                 name: "Suzuka",
                 shortDate: "08 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Suzuka",
+                    corners: 1,
+                    laps: 1,
+                    location: "Japón"
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: 'DNF', points: 0,
             penalties: [],
             additionalPoints: {
@@ -1031,7 +1611,17 @@ export const rows: PilotResult[] = [
                 name: "Sebring",
                 shortDate: "15 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Sebring",
+                    corners: 1,
+                    laps: 1,
+                    location: "EE.UU."
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: '15', points: 4,
             penalties: [],
             additionalPoints: {
@@ -1045,7 +1635,17 @@ export const rows: PilotResult[] = [
                 name: "Silverstone",
                 shortDate: "22 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Silverstone",
+                    corners: 1,
+                    laps: 1,
+                    location: "Reino Unido"
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: '10', points: 14,
             penalties: [],
             additionalPoints: {
@@ -1068,7 +1668,17 @@ export const rows: PilotResult[] = [
                 name: "Suzuka",
                 shortDate: "08 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Suzuka",
+                    corners: 1,
+                    laps: 1,
+                    location: "Japón"
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: 'DNF', points: 0,
             penalties: [],
             additionalPoints: {
@@ -1082,7 +1692,17 @@ export const rows: PilotResult[] = [
                 name: "Sebring",
                 shortDate: "15 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Sebring",
+                    corners: 1,
+                    laps: 1,
+                    location: "EE.UU."
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: '17', points: 1,
             penalties: [],
             additionalPoints: {
@@ -1096,7 +1716,17 @@ export const rows: PilotResult[] = [
                 name: "Silverstone",
                 shortDate: "22 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Silverstone",
+                    corners: 1,
+                    laps: 1,
+                    location: "Reino Unido"
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: '17', points: 1,
             penalties: [],
             additionalPoints: {
@@ -1118,7 +1748,17 @@ export const rows: PilotResult[] = [
                 name: "Suzuka",
                 shortDate: "08 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Suzuka",
+                    corners: 1,
+                    laps: 1,
+                    location: "Japón"
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: 'DNF', points: 0,
             penalties: [],
             additionalPoints: {
@@ -1132,7 +1772,17 @@ export const rows: PilotResult[] = [
                 name: "Sebring",
                 shortDate: "15 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Sebring",
+                    corners: 1,
+                    laps: 1,
+                    location: "EE.UU."
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: 'DNS', points: 0,
             penalties: [],
             additionalPoints: {
@@ -1146,7 +1796,17 @@ export const rows: PilotResult[] = [
                 name: "Silverstone",
                 shortDate: "22 Dic",
                 year: "2025",
-                circuit: "GP"
+                circuit: {
+                    type: "GP",
+                    large: "Silverstone",
+                    corners: 1,
+                    laps: 1,
+                    location: "Reino Unido"
+                },
+                time: "20:00",
+                weather: "Despejado",
+                stops: 1,
+                tires: 1
             }, position: '14', points: 6,
             penalties: [],
             additionalPoints: {
