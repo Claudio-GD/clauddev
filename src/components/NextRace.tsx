@@ -49,7 +49,7 @@ export const NextRace = ({ open, setOpen, nextRace }: Props) => {
                         </button>
                     </div>
 
-                    <div className="p-8 space-y-8">
+                    <div className="flex-1 overflow-y-auto sidesheet-scroll p-6 bg-surface">
                         <div className="rounded-2xl bg-surface border border-surface-highlight overflow-hidden p-6 flex flex-col items-center">
                             <div className="w-full h-40 bg-slate-200 rounded-xl flex items-center justify-center mb-4 relative overflow-hidden group">
                                 <span className="text-6xl text-slate-400 group-hover:text-slate-500 transition-colors">
