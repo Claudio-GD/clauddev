@@ -1,5 +1,5 @@
 import { Dialog, Transition } from "@headlessui/react"
-import type { RaceResult, Pilot } from "@type/PilotResult";
+import type { RaceResult, Pilot } from "src/types/PilotResult";
 
 type Props = {
     open: boolean;

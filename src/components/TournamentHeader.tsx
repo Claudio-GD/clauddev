@@ -1,4 +1,4 @@
-import Godzilla from "@assets/nissan-skyline-r34-gtr.png"
+import Godzilla from "@/assets/nissan-skyline-r34-gtr.png"
 
 export const TournamentHeader = () => (
     <div className="relative flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 bg-surface border border-surface rounded-2xl p-6 md:p-10 overflow-hidden shadow-sm">

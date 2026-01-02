@@ -1,15 +1,17 @@
 import { Dialog, Transition } from "@headlessui/react"
 
-import Map from '@assets/Watkins_Glen_International_Track_Map.svg'
-import type { Race } from "@type/Race";
+import Map from '@/assets/Watkins_Glen_International_Track_Map.svg'
+import type { NextRaceRPC } from "@/hooks/useNextRace";
 
 type Props = {
     open: boolean;
     setOpen: (v: boolean) => void;
-    nextRace: Race;
+    nextRace: NextRaceRPC | null;
 }
 
 export const NextRace = ({ open, setOpen, nextRace }: Props) => {
+    if (!open || !nextRace) return null
+
     return (
         <Dialog open={open} onClose={() => setOpen(false)} className="transition duration-600 ease-in data-closed:opacity-0" transition>
             <Transition show={open}>
@@ -41,7 +43,7 @@ export const NextRace = ({ open, setOpen, nextRace }: Props) => {
 
                             <div className="flex flex-col">
                                 <h2 className="text-text text-lg font-bold tracking-tight">Próxima Carrera</h2>
-                                <span className="text-gray-400 text-xs font-medium">{nextRace.name} • {nextRace.shortDate} {nextRace.year}</span>
+                                <span className="text-gray-400 text-xs font-medium">{nextRace?.circuit_name} • {nextRace?.race_short_date} {nextRace?.race_year}</span>
                             </div>
                         </div>
                         <button className="flex items-center justify-center size-10 rounded-full bg-surface-highlight text-text-muted hover:bg-surface-highlight/80 transition-colors cursor-pointer group" onClick={() => setOpen(false)}>
@@ -56,9 +58,9 @@ export const NextRace = ({ open, setOpen, nextRace }: Props) => {
                                     <img src={Map} className="w-70 h-70 object-contain" alt="Mapa del Circuito" />
                                 </span>
                             </div>
-                            <h4 className="text-text-muted font-bold text-lg">{nextRace.name}</h4>
-                            <h4 className="text-text-muted font-bold text-lg">{nextRace.circuit.type}</h4>
-                            <p className="text-text text-sm">{nextRace.circuit.location}</p>
+                            <h4 className="text-text-muted font-bold text-lg">{nextRace?.circuit_name}</h4>
+                            <h4 className="text-text-muted font-bold text-lg">{nextRace?.circuit_type}</h4>
+                            <p className="text-text text-sm">{nextRace?.circuit_location}</p>
                         </div>
                         <div className="grid grid-cols-2 gap-4">
                             <div className="bg-surface p-4 rounded-xl border border-surface-highlight">
@@ -67,7 +69,7 @@ export const NextRace = ({ open, setOpen, nextRace }: Props) => {
                                     <span className="text-text-muted text-xs font-bold uppercase">Hora Virtual</span>
                                 </div>
                                 <div className="flex items-center justify-center gap-3">
-                                    <p className="text-text font-bold text-lg">{nextRace.time}</p>
+                                    <p className="text-text font-bold text-lg">{nextRace?.race_time}</p>
                                 </div>
                             </div>
                             <div className="bg-surface p-4 rounded-xl border border-surface-highlight">
@@ -76,7 +78,7 @@ export const NextRace = ({ open, setOpen, nextRace }: Props) => {
                                     <span className="text-text-muted text-xs font-bold uppercase">Clima</span>
                                 </div>
                                 <div className="flex items-center justify-center gap-3">
-                                    <p className="text-text font-bold text-lg">{nextRace.weather}</p>
+                                    <p className="text-text font-bold text-lg">{nextRace?.race_weather}</p>
                                 </div>
                             </div>
                             <div className="bg-surface p-4 rounded-xl border border-surface-highlight">
@@ -85,7 +87,7 @@ export const NextRace = ({ open, setOpen, nextRace }: Props) => {
                                     <span className="text-text-muted text-xs font-bold uppercase">Paradas</span>
                                 </div>
                                 <div className="flex items-center justify-center gap-3">
-                                    <p className="text-text font-bold text-lg">{nextRace.stops} Obligatoria</p>
+                                    <p className="text-text font-bold text-lg">{nextRace?.race_stops} Obligatoria</p>
                                 </div>
                             </div>
                             <div className="bg-surface p-4 rounded-xl border border-surface-highlight">
@@ -94,7 +96,7 @@ export const NextRace = ({ open, setOpen, nextRace }: Props) => {
                                     <span className="text-text-muted text-xs font-bold uppercase">Desgaste</span>
                                 </div>
                                 <div className="flex items-center justify-center gap-3">
-                                    <p className="text-text font-bold text-lg">x{nextRace.tires}</p>
+                                    <p className="text-text font-bold text-lg">x{nextRace?.race_tires}</p>
                                 </div>
                             </div>
                         </div>
@@ -107,15 +109,15 @@ export const NextRace = ({ open, setOpen, nextRace }: Props) => {
                                 <div className="space-y-3">
                                     <div className="flex justify-between items-center group">
                                         <span className="text-text-muted text-sm group-hover:text-gray-900 transition-colors">Longitud</span>
-                                        <span className="text-text text-mono font-bold">{nextRace.circuit.large} km</span>
+                                        <span className="text-text text-mono font-bold">{nextRace?.circuit_large} km</span>
                                     </div>
                                     <div className="flex justify-between items-center group">
                                         <span className="text-text-muted text-sm group-hover:text-gray-900 transition-colors">Curvas</span>
-                                        <span className="text-text text-mono font-bold">{nextRace.circuit.corners}</span>
+                                        <span className="text-text text-mono font-bold">{nextRace?.circuit_corners}</span>
                                     </div>
                                     <div className="flex justify-between items-center group">
                                         <span className="text-text-muted text-sm group-hover:text-gray-900 transition-colors">Vueltas</span>
-                                        <span className="text-text text-mono font-bold">{nextRace.circuit.laps}</span>
+                                        <span className="text-text text-mono font-bold">{nextRace?.race_laps}</span>
                                     </div>
                                 </div>
                             </div>

@@ -1,4 +1,4 @@
-import ClauddevLogo from "@assets/clauddev_logo.png"
+import ClauddevLogo from "@/assets/clauddev_logo.png"
 
 export function Home() {
     return (

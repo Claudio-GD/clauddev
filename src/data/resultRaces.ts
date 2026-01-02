@@ -1,4 +1,4 @@
-import type { PilotResult } from "@type/PilotResult";
+import type { PilotResult } from "src/types/PilotResult";
 
 export const rows: PilotResult[] = [
     {

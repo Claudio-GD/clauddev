@@ -1,5 +1,5 @@
-import type { Pilot, RaceResult } from "@type/PilotResult";
-import { rows } from "@data/resultRaces";
+import type { Pilot, RaceResult } from "@/types/PilotResult";
+import { rows } from "@/data/resultRaces";
 
 type Props = {
     handleClickResume: (pilot: Pilot, race: RaceResult) => void;

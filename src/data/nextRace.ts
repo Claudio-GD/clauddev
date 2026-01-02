@@ -1,4 +1,4 @@
-import type { Race } from "@type/Race";
+import type { Race } from "src/types/Race";
 
 export const nextRace: Race = {
     id: "5",

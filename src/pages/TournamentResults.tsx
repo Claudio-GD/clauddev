@@ -1,10 +1,10 @@
-import { DashboardStats } from "@components/DashboardStats";
-import { ResultTable } from "@components/ResultTable/ResultTable";
-import { TournamentHeader } from "@components/TournamentHeader";
-import { ThemeToggleButton } from "@components/ThemeToggleButton";
+import { DashboardStats } from "@/components/DashboardStats";
+import { ResultTable } from "@/components/ResultTable/ResultTable";
+import { TournamentHeader } from "@/components/TournamentHeader";
+import { ThemeToggleButton } from "@/components/ThemeToggleButton";
 // import { Header } from "@components/Header"
 // import { Pagination } from '@components/Pagination'
-import { useThemeStore } from "@store/useThemeStore";
+import { useThemeStore } from "@/store/useThemeStore";
 import { useEffect } from "react";
 
 export function TournamentResults() {

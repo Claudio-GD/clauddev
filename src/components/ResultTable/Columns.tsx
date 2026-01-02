@@ -1,4 +1,4 @@
-import type { Race } from "@type/Race";
+import type { Race } from "src/types/Race";
 
 type Props = {
     races: Race[];

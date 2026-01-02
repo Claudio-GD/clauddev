@@ -3,9 +3,9 @@ import { useState } from "react";
 import { ResultTableColumns } from "./Columns";
 import { ResultRace } from "../ResultRace";
 import { ResultTableRows } from "./Rows";
-import type { Pilot, RaceResult } from "@type/PilotResult";
+import type { Pilot, RaceResult } from "src/types/PilotResult";
 import { Leyend } from "./Leyend";
-import type { Race } from "@type/Race";
+import type { Race } from "src/types/Race";
 
 export const ResultTable = () => {
     const [open, setOpen] = useState(false)
