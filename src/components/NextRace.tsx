@@ -62,7 +62,7 @@ export const NextRace = ({ open, setOpen, nextRace }: Props) => {
                             <h4 className="text-text-muted font-bold text-lg">{nextRace?.circuit_type}</h4>
                             <p className="text-text text-sm">{nextRace?.circuit_location}</p>
                         </div>
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-2 p-6 gap-4">
                             <div className="bg-surface p-4 rounded-xl border border-surface-highlight">
                                 <div className="flex items-center justify-center gap-3 mb-2">
                                     <span className="material-symbols-outlined text-primary-dark text-xl">schedule</span>

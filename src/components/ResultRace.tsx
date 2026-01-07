@@ -1,18 +1,22 @@
 import { Dialog, Transition } from "@headlessui/react"
-import type { RaceResult, Pilot } from "src/types/PilotResult";
+import useRaceDetails from "@/hooks/useRaceDetails"
+import useRacePenalties from "@/hooks/useRacePenalties";
 
 type Props = {
     open: boolean;
     setOpen: (v: boolean) => void;
-    pilot: Pilot | null;
-    raceResult: RaceResult | null;
+    pilotId: string;
+    raceId: string;
 }
 
-export const ResultRace = ({ open, setOpen, pilot, raceResult }: Props) => {
+export const ResultRace = ({ open, setOpen, pilotId, raceId }: Props) => {
 
-    if (!raceResult || !pilot) return null;
+    const { raceDetails, isLoading: isLoadingDetails } = useRaceDetails(raceId, pilotId);
+    const { racePenalties, isLoading: isLoadingPenalties } = useRacePenalties(pilotId, raceId);
 
-    const totalPoints = raceResult.points + raceResult.additionalPoints.qualy + raceResult.additionalPoints.fastLap + raceResult.additionalPoints.cleanRace;
+    if (isLoadingDetails || isLoadingPenalties) return null;
+
+    if (!raceDetails || !racePenalties) return null;
 
     return (
         <Dialog open={open} onClose={() => setOpen(false)} className="transition duration-600 ease-in data-closed:opacity-0" transition>
@@ -50,45 +54,47 @@ export const ResultRace = ({ open, setOpen, pilot, raceResult }: Props) => {
                         <div className="flex flex-col gap-6 mb-6">
                             <div className="flex items-start gap-5">
                                 <div className="flex flex-col pt-1">
-                                    <h1 className="text-text text-3xl font-bold leading-tight tracking-tight mb-1">{pilot.name}</h1>
+                                    <h1 className="text-text text-3xl font-bold leading-tight tracking-tight mb-1">{raceDetails?.pilot}</h1>
                                     <p className="text-text-muted text-base font-medium flex items-center gap-2">
                                         <span className="w-2 h-2 rounded-full bg-primary"></span>
-                                        {pilot.team}
+                                        {raceDetails?.team}
                                     </p>
                                     <div className="mt-3 flex items-center gap-2">
-                                        <span className="px-3 py-1 rounded-full bg-gray-100 border border-gray-200 text-xs font-semibold tracking-wide text-gray-600">{raceResult.race.name}</span>
-                                        <span className="text-gray-400 text-xs font-medium">{raceResult.race.shortDate + ' ' + raceResult.race.year}</span>
+                                        <span className="px-3 py-1 rounded-full bg-gray-100 border border-gray-200 text-xs font-semibold tracking-wide text-gray-600">{raceDetails?.circuit}</span>
+                                        <span className="text-gray-400 text-xs font-medium">{raceDetails?.race_date}</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         {/* Sanciones */}
-                        {raceResult.penalties?.length > 0 && (
+                        {racePenalties && racePenalties.length > 0 && (
                             <div className="rounded-xl bg-red-200 border border-red-100 p-4 mb-8">
                                 <div className="flex items-center gap-2 mb-3 text-red-600">
                                     <span className="material-symbols-outlined">gavel</span>
                                     <h3 className="font-bold text-sm uppercase tracking-wide">Sanciones Aplicadas</h3>
                                 </div>
-                                <div className="flex flex-col gap-2">
-                                    <div className="flex justify-between items-center text-sm">
-                                        <span className="text-gray-800 pr-4">{raceResult.penalties?.[0].detail}</span>
-                                        <span className="text-red-700 font-bold bg-red-500/10 px-2 py-0.5 rounded text-xs border border-red-200 shadow-sm">+{raceResult.penalties?.[0].positions} pos</span>
-                                    </div>
-                                    <div className="flex justify-between items-center text-sm pt-2 mt-1 border-t border-red-100">
-                                        <span className="text-gray-500">Recargo de Posición</span>
-                                        <span className="text-gray-900 font-mono flex items-center gap-2">
-                                            <span className="text-gray-400 line-through">{parseInt(raceResult.position) - raceResult.penalties?.[0].positions} (Pista)</span>
-                                            <span className="material-symbols-outlined text-xs text-red-500">arrow_forward</span>
-                                            <span className="font-bold text-red-600">{raceResult.position} (Final)</span>
-                                        </span>
-                                    </div>
-                                    {raceResult.penalties?.[0].points && raceResult.penalties?.[0].points > 0 ? (
+                                {racePenalties.map((penalty, index) => (
+                                    <div key={index} className="flex flex-col gap-2">
                                         <div className="flex justify-between items-center text-sm">
-                                            <span className="text-gray-500">Puntos de Penalización</span>
-                                            <span className="text-red-600 font-bold">-{raceResult.penalties?.[0].points} pts</span>
+                                            <span className="text-gray-800 pr-4">{penalty.detail}</span>
+                                            <span className="text-red-700 font-bold bg-red-500/10 px-2 py-0.5 rounded text-xs border border-red-200 shadow-sm">+{penalty.positions_penalized} pos</span>
                                         </div>
-                                    ) : null}
-                                </div>
+                                        <div className="flex justify-between items-center text-sm pt-2 mt-1 border-t border-red-100">
+                                            <span className="text-gray-500">Recargo de Posición</span>
+                                            <span className="text-gray-900 font-mono flex items-center gap-2">
+                                                <span className="text-gray-400 line-through">{parseInt(raceDetails?.race_position) - penalty.positions_penalized} (Pista)</span>
+                                                <span className="material-symbols-outlined text-xs text-red-500">arrow_forward</span>
+                                                <span className="font-bold text-red-600">{raceDetails?.race_position} (Final)</span>
+                                            </span>
+                                        </div>
+                                        {penalty.points_penalized && penalty.points_penalized > 0 ? (
+                                            <div className="flex justify-between items-center text-sm">
+                                                <span className="text-gray-500">Puntos de Penalización</span>
+                                                <span className="text-red-600 font-bold">-{penalty.points_penalized} pts</span>
+                                            </div>
+                                        ) : null}
+                                    </div>
+                                ))}
                             </div>
                         )}
                         {/* Resultado final */}
@@ -96,13 +102,13 @@ export const ResultRace = ({ open, setOpen, pilot, raceResult }: Props) => {
                             <div className="flex flex-col gap-1 rounded-xl bg-surface-alt border border-surface-highlight p-5 items-center justify-center text-center relative overflow-hidden group hover:shadow-md transition-shadow">
                                 <div className="absolute inset-0 bg-gradient-to-br from-surface to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                 <span className="material-symbols-outlined text-gray-400 text-2xl mb-1">emoji_events</span>
-                                <p className="text-text text-4xl font-bold leading-tight tracking-tight">{raceResult?.position}</p>
+                                <p className="text-text text-4xl font-bold leading-tight tracking-tight">{raceDetails?.race_position}</p>
                                 <p className="text-text-muted text-sm font-medium uppercase tracking-wider mt-1">Posición Oficial</p>
                             </div>
                             <div className="flex flex-col gap-1 rounded-xl bg-surface border border-primary/30 p-5 items-center justify-center relative overflow-hidden group hover:shadow-md transition-shadow">
                                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                 <span className="material-symbols-outlined text-primary text-2xl mb-1">stars</span>
-                                <p className="text-primary text-4xl font-bold leading-tight tracking-tight">{totalPoints}</p>
+                                <p className="text-primary text-4xl font-bold leading-tight tracking-tight">{raceDetails?.total_points}</p>
                                 <p className="text-primary text-sm font-medium uppercase tracking-wider mt-1">Puntos Totales</p>
                             </div>
                         </div>
@@ -114,25 +120,25 @@ export const ResultRace = ({ open, setOpen, pilot, raceResult }: Props) => {
                             </h3>
                             <div className="space-y-3">
                                 <div className="flex justify-between items-center group">
-                                    <span className="text-text-muted text-sm group-hover:text-gray-900 transition-colors">Posición Final ({raceResult.position})</span>
-                                    <span className="text-text text-mono font-bold">+{raceResult.points}</span>
+                                    <span className="text-text-muted text-sm group-hover:text-gray-900 transition-colors">Posición Final ({raceDetails?.race_position})</span>
+                                    <span className="text-text text-mono font-bold">+{raceDetails?.base_points}</span>
                                 </div>
                                 <div className="flex justify-between items-center group">
                                     <span className="text-text-muted text-sm group-hover:text-gray-900 transition-colors">Clasificación</span>
-                                    <span className="text-text text-mono font-bold">+{raceResult.additionalPoints.qualy}</span>
+                                    <span className="text-text text-mono font-bold">+{raceDetails?.qualy_points}</span>
                                 </div>
                                 <div className="flex justify-between items-center group">
                                     <span className="text-text-muted text-sm group-hover:text-gray-900 transition-colors">Vuelta Rápida</span>
-                                    <span className="text-text text-mono font-bold">+{raceResult.additionalPoints.fastLap}</span>
+                                    <span className="text-text text-mono font-bold">+{raceDetails?.fast_lap_points}</span>
                                 </div>
                                 <div className="flex justify-between items-center group">
                                     <span className="text-text-muted text-sm group-hover:text-gray-900 transition-colors">Carrera Limpia</span>
-                                    <span className="text-text text-mono font-bold">+{raceResult.additionalPoints.cleanRace}</span>
+                                    <span className="text-text text-mono font-bold">+{raceDetails?.clean_race_points}</span>
                                 </div>
                                 <div className="h-px bg-gray-200 my-1"></div>
                                 <div className="flex justify-between items-center pt-1">
                                     <span className="text-text font-bold text-sm">Total Acumulado</span>
-                                    <span className="text-primary text-lg font-bold">{totalPoints} Pts</span>
+                                    <span className="text-primary text-lg font-bold">{raceDetails?.total_points} Pts</span>
                                 </div>
                             </div>
                         </div>

@@ -160,6 +160,20 @@ export type Database = {
             referencedRelation: "races"
             referencedColumns: ["id"]
           },
+          {
+            foreignKeyName: "race_results_race_id_fkey"
+            columns: ["race_id"]
+            isOneToOne: false
+            referencedRelation: "v_active_races"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "race_results_race_id_fkey"
+            columns: ["race_id"]
+            isOneToOne: false
+            referencedRelation: "v_results_with_details"
+            referencedColumns: ["race_id"]
+          },
         ]
       }
       races: {
@@ -226,7 +240,39 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      v_active_races: {
+        Row: {
+          date: string | null
+          id: string | null
+          name: string | null
+          short_date: string | null
+          year: number | null
+        }
+        Relationships: []
+      }
+      v_results_with_details: {
+        Row: {
+          circuit_name: string | null
+          has_fast_lap: boolean | null
+          has_penalties: boolean | null
+          is_winner: boolean | null
+          net_points: number | null
+          pilot_id: string | null
+          pilot_name: string | null
+          race_id: string | null
+          short_date: string | null
+          team_name: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "race_results_pilot_id_fkey"
+            columns: ["pilot_id"]
+            isOneToOne: false
+            referencedRelation: "pilots"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Functions: {
       get_next_race_in_window: {
@@ -244,6 +290,29 @@ export type Database = {
           race_tires: number
           race_weather: string
           race_year: number
+        }[]
+      }
+      get_race_details: {
+        Args: { p_pilot_id: string; p_race_id: string }
+        Returns: {
+          base_points: number
+          circuit: string
+          clean_race_points: number
+          fast_lap_points: number
+          pilot: string
+          qualy_points: number
+          race_date: string
+          race_position: string
+          team: string
+          total_points: number
+        }[]
+      }
+      get_race_penalties: {
+        Args: { p_pilot_id: string; p_race_id: string }
+        Returns: {
+          detail: string
+          points_penalized: number
+          positions_penalized: number
         }[]
       }
     }

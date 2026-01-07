@@ -8,10 +8,12 @@ const useNextRace = () => {
     const { data, isLoading, error } = useQuery<NextRaceRPC | null>({
         queryKey: ['nextRace'],
         queryFn: async () => {
-            const { data, error } = await supabase.rpc('get_next_race_in_window').maybeSingle()
+            const { data, error } = await supabase.rpc('get_next_race_in_window')
 
             if (error) throw error
-            return data
+            if (!data || (Array.isArray(data) && data.length === 0)) return null
+
+            return Array.isArray(data) ? data[0] : data
         },
         staleTime: 1000 * 60 * 60
     })
