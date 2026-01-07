@@ -103,7 +103,7 @@ export const rows: PilotResult[] = [
                 }, position: '6', points: 22,
                 penalties: [],
                 additionalPoints: {
-                    fastLap: 0,
+                    fastLap: 3,
                     cleanRace: 0,
                     qualy: 0
                 }
@@ -535,7 +535,7 @@ export const rows: PilotResult[] = [
                 }, position: '1', points: 35,
                 penalties: [],
                 additionalPoints: {
-                    fastLap: 3,
+                    fastLap: 0,
                     cleanRace: 0,
                     qualy: 3
                 }

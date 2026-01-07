@@ -22,23 +22,8 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@assets/*": [
-        "src/assets/*"
-      ],
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@data/*": [
-        "src/data/*"
-      ],
-      "@pages/*": [
-        "src/pages/*"
-      ],
-      "@store/*": [
-        "src/store/*"
-      ],
-      "@type/*": [
-        "src/type/*"
+      "@/*": [
+        "src/*"
       ],
     },
     /* Linting */

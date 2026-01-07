@@ -1,4 +1,4 @@
-import { useThemeStore } from "@store/useThemeStore";
+import { useThemeStore } from "@/store/useThemeStore";
 
 export const ThemeToggleButton = () => {
     const { isLight, toggleTheme } = useThemeStore()
@@ -11,4 +11,4 @@ export const ThemeToggleButton = () => {
             </button>
         </div>
     )
-}
+}   
