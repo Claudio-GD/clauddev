@@ -98,7 +98,7 @@ export const ResultTable = () => {
                     </table>
                 </div>
             </div>
-            <ResultRace open={open} setOpen={setOpen} pilotId={pilotId} raceId={raceId} />
+            <ResultRace open={open} setOpen={setOpen} pilotId={pilotId ?? ''} raceId={raceId ?? ''} />
         </>
     )
 }
