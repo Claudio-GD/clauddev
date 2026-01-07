@@ -36,7 +36,7 @@ export const DashboardStats = () => {
                     </div>
                     <div>
                         <p className="text-text-muted text-xs font-medium uppercase">Líder Actual</p>
-                        <p className="text-text font-bold">LazyArc62</p>
+                        <p className="text-text font-bold">SMX SAVITAR</p>
                     </div>
                 </div>
             </div>
