@@ -1,7 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react"
 
-import Map from "@/assets/Watkins_Glen_International_Track_Map.svg"
-import type { NextRaceRPC } from "@/hooks/useNextRace"
+import Map from '@/assets/Kyalami_Track_Map.webp'
+import type { NextRaceRPC } from "@/hooks/useNextRace";
 
 type Props = {
   open: boolean
