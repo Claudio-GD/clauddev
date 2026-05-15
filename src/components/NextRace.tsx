@@ -1,6 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react"
 
-import Map from '@/assets/Kyalami_Track_Map.webp'
+import Map from '@/assets/circuits/Silverstone_GP.webp'
 import type { NextRaceRPC } from "@/hooks/useNextRace";
 
 type Props = {
