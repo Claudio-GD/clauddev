@@ -1,4 +1,4 @@
-import Legends from "@/assets/f1-legends.webp"
+import V8 from "@/assets/v8-supercars.webp"
 
 type THeaderProps = {
   isFinished: boolean
@@ -15,9 +15,9 @@ export const TournamentHeader = ({
     <div className="absolute inset-y-0 right-0 w-full md:w-3/5 pointer-events-none">
       <div className="absolute inset-0 bg-gradient-to-r from-surface-light via-surface-light/80 to-transparent z-10"></div>
       <img
-        alt="F1 Legends"
+        alt="V8 Supercars Championship"
         className="w-full h-full object-cover object-center opacity-20 mix-blend-multiply"
-        src={Legends}
+        src={V8}
       />
     </div>
     <div className="relative z-10 flex flex-col gap-2 max-w-2xl">

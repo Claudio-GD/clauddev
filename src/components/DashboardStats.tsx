@@ -49,7 +49,7 @@ export const DashboardStats = () => {
             <p className="text-text-muted text-xs font-medium uppercase">
               Ganador del campeonato
             </p>
-            <p className="text-text font-bold">AFz Maverick</p>
+            <p className="text-text font-bold">SMX SAVITAR</p>
           </div>
         </div>
       </div>
