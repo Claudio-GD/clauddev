@@ -142,22 +142,6 @@ export type Database = {
         }
         Relationships: []
       }
-      v_results_with_details: {
-        Row: {
-          circuit_name: string | null
-          has_fast_lap: boolean | null
-          has_penalties: boolean | null
-          is_winner: boolean | null
-          net_points: number | null
-          pilot_id: string | null
-          pilot_name: string | null
-          race_id: string | null
-          short_date: string | null
-          team_name: string | null
-          tournament_id: string | null
-        }
-        Relationships: []
-      }
     }
     Functions: {
       crear_arrendatario: {
@@ -203,6 +187,16 @@ export type Database = {
       crear_propiedad: {
         Args: { p_depto_numero: string; p_direccion: string }
         Returns: number
+      }
+      get_active_races: {
+        Args: { p_tournament_code: string }
+        Returns: {
+          date: string
+          id: string
+          name: string
+          short_date: string
+          year: number
+        }[]
       }
       get_next_race_in_window: {
         Args: never
