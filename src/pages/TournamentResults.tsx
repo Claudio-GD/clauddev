@@ -1,58 +1,67 @@
-import { DashboardStats } from "@/components/DashboardStats";
-import { ResultTable } from "@/components/ResultTable/ResultTable";
-import { TournamentHeader } from "@/components/TournamentHeader";
-import { ThemeToggleButton } from "@/components/ThemeToggleButton";
+import { DashboardStats } from "@/components/DashboardStats"
+import { ResultTable } from "@/components/ResultTable/ResultTable"
+import { TournamentHeader } from "@/components/TournamentHeader"
+import { ThemeToggleButton } from "@/components/ThemeToggleButton"
 // import { Header } from "@components/Header"
 // import { Pagination } from '@components/Pagination'
-import { useThemeStore } from "@/store/useThemeStore";
-import { useEffect } from "react";
-import Podium from "@/components/Podium";
+import { useThemeStore } from "@/store/useThemeStore"
+import { useEffect } from "react"
+import Podium from "@/components/Podium"
+import { useParams } from "react-router-dom"
 
 type ResultsProps = {
-    title: string;
-    name:string
-    season:string
-    isFinished?: boolean
+  title: string
+  name: string
+  season: string
+  isFinished?: boolean
 }
 
-export function TournamentResults({ title,name, season, isFinished = false }: ResultsProps) {
-    const isLight = useThemeStore((state) => state.isLight)
+export function TournamentResults({
+  title,
+  name,
+  season,
+  isFinished = false,
+}: ResultsProps) {
+  const { id } = useParams()
 
-    useEffect(() => {
-        document.title = title
-        const link = document.querySelector("link[rel~='icon']");
+  const isLight = useThemeStore((state) => state.isLight)
 
-        if (link) {
-            link.setAttribute("href", "/logo.png");
-        }
-    }, [])
+  useEffect(() => {
+    document.title = title
+    const link = document.querySelector("link[rel~='icon']")
 
-    useEffect(() => {
-        if (isLight) {
-            document.documentElement.classList.add("light")
-        } else {
-            document.documentElement.classList.remove("light")
-        }
-    }, [isLight])
+    if (link) {
+      link.setAttribute("href", "/logo.png")
+    }
+  }, [])
 
-    return (
-        <>
-            <ThemeToggleButton />
-            <div className="relative flex min-h-screen w-full flex-col group/design-root">
-                {/* <Header /> */}
-                <main className="flex-1 px-4 md:px-10 py-8 lg:px-20 max-w-[1600px] mx-auto w-full">
-                    <TournamentHeader name={name} season={season} isFinished />
-                    {isFinished ?
-                        <Podium />
-                        :
-                        <>
-                            <DashboardStats />
-                            <ResultTable />
-                        </>
-                    }
-                    {/* <Pagination /> */}
-                </main>
-            </div>
-        </>
-    )
+  useEffect(() => {
+    if (isLight) {
+      document.documentElement.classList.add("light")
+    } else {
+      document.documentElement.classList.remove("light")
+    }
+  }, [isLight])
+
+  const body =
+    id !== undefined ? (
+      <>
+        <DashboardStats />
+        <ResultTable tournamentCode={id} />
+      </>
+    ) : null
+
+  return (
+    <>
+      <ThemeToggleButton />
+      <div className="relative flex min-h-screen w-full flex-col group/design-root">
+        {/* <Header /> */}
+        <main className="flex-1 px-4 md:px-10 py-8 lg:px-20 max-w-[1600px] mx-auto w-full">
+          <TournamentHeader name={name} season={season} isFinished />
+          {isFinished ? <Podium /> : body}
+          {/* <Pagination /> */}
+        </main>
+      </div>
+    </>
+  )
 }

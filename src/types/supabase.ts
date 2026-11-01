@@ -14,230 +14,7 @@ export type Database = {
   }
   public: {
     Tables: {
-      circuits: {
-        Row: {
-          corners: number | null
-          id: string
-          large: number | null
-          location: string | null
-          name: string
-          type: string | null
-        }
-        Insert: {
-          corners?: number | null
-          id?: string
-          large?: number | null
-          location?: string | null
-          name: string
-          type?: string | null
-        }
-        Update: {
-          corners?: number | null
-          id?: string
-          large?: number | null
-          location?: string | null
-          name?: string
-          type?: string | null
-        }
-        Relationships: []
-      }
-      penalties: {
-        Row: {
-          detail: string
-          id: string
-          points_penalized: number | null
-          positions_penalized: number | null
-          result_id: string | null
-        }
-        Insert: {
-          detail: string
-          id?: string
-          points_penalized?: number | null
-          positions_penalized?: number | null
-          result_id?: string | null
-        }
-        Update: {
-          detail?: string
-          id?: string
-          points_penalized?: number | null
-          positions_penalized?: number | null
-          result_id?: string | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "penalties_result_id_fkey"
-            columns: ["result_id"]
-            isOneToOne: false
-            referencedRelation: "race_results"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      pilots: {
-        Row: {
-          id: string
-          name: string
-          team_id: string | null
-        }
-        Insert: {
-          id?: string
-          name: string
-          team_id?: string | null
-        }
-        Update: {
-          id?: string
-          name?: string
-          team_id?: string | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "pilots_team_id_fkey"
-            columns: ["team_id"]
-            isOneToOne: false
-            referencedRelation: "teams"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      point_system: {
-        Row: {
-          points: number
-          position_id: number
-        }
-        Insert: {
-          points: number
-          position_id: number
-        }
-        Update: {
-          points?: number
-          position_id?: number
-        }
-        Relationships: []
-      }
-      race_results: {
-        Row: {
-          base_points: number | null
-          clean_race_points: number | null
-          fast_lap_points: number | null
-          id: string
-          pilot_id: string | null
-          position: string | null
-          qualy_points: number | null
-          race_id: string | null
-        }
-        Insert: {
-          base_points?: number | null
-          clean_race_points?: number | null
-          fast_lap_points?: number | null
-          id?: string
-          pilot_id?: string | null
-          position?: string | null
-          qualy_points?: number | null
-          race_id?: string | null
-        }
-        Update: {
-          base_points?: number | null
-          clean_race_points?: number | null
-          fast_lap_points?: number | null
-          id?: string
-          pilot_id?: string | null
-          position?: string | null
-          qualy_points?: number | null
-          race_id?: string | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "race_results_pilot_id_fkey"
-            columns: ["pilot_id"]
-            isOneToOne: false
-            referencedRelation: "pilots"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "race_results_race_id_fkey"
-            columns: ["race_id"]
-            isOneToOne: false
-            referencedRelation: "races"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "race_results_race_id_fkey"
-            columns: ["race_id"]
-            isOneToOne: false
-            referencedRelation: "v_active_races"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "race_results_race_id_fkey"
-            columns: ["race_id"]
-            isOneToOne: false
-            referencedRelation: "v_results_with_details"
-            referencedColumns: ["race_id"]
-          },
-        ]
-      }
-      races: {
-        Row: {
-          circuit_id: string | null
-          date: string | null
-          id: string
-          laps: number | null
-          short_date: string | null
-          stops: number | null
-          time: string | null
-          tires: number | null
-          weather: string | null
-          year: number | null
-        }
-        Insert: {
-          circuit_id?: string | null
-          date?: string | null
-          id?: string
-          laps?: number | null
-          short_date?: string | null
-          stops?: number | null
-          time?: string | null
-          tires?: number | null
-          weather?: string | null
-          year?: number | null
-        }
-        Update: {
-          circuit_id?: string | null
-          date?: string | null
-          id?: string
-          laps?: number | null
-          short_date?: string | null
-          stops?: number | null
-          time?: string | null
-          tires?: number | null
-          weather?: string | null
-          year?: number | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "races_circuit_id_fkey"
-            columns: ["circuit_id"]
-            isOneToOne: false
-            referencedRelation: "circuits"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      teams: {
-        Row: {
-          id: string
-          name: string
-        }
-        Insert: {
-          id?: string
-          name: string
-        }
-        Update: {
-          id?: string
-          name?: string
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Views: {
       v_active_races: {
@@ -247,6 +24,121 @@ export type Database = {
           name: string | null
           short_date: string | null
           year: number | null
+        }
+        Relationships: []
+      }
+      v_arrendatarios: {
+        Row: {
+          email: string | null
+          id: number | null
+          nombre_completo: string | null
+          rut: string | null
+          telefono: string | null
+        }
+        Insert: {
+          email?: string | null
+          id?: number | null
+          nombre_completo?: string | null
+          rut?: string | null
+          telefono?: string | null
+        }
+        Update: {
+          email?: string | null
+          id?: number | null
+          nombre_completo?: string | null
+          rut?: string | null
+          telefono?: string | null
+        }
+        Relationships: []
+      }
+      v_contratos: {
+        Row: {
+          arrendatario_id: number | null
+          arrendatario_nombre: string | null
+          arrendatario_rut: string | null
+          depto_numero: string | null
+          direccion: string | null
+          estado: string | null
+          fecha_inicio: string | null
+          fecha_termino: string | null
+          id: number | null
+          monto_arriendo_pactado: number | null
+          monto_garantia: number | null
+          propiedad_id: number | null
+        }
+        Relationships: []
+      }
+      v_gastos: {
+        Row: {
+          categoria: string | null
+          descripcion: string | null
+          fecha_gasto: string | null
+          id: number | null
+          monto_total: number | null
+        }
+        Insert: {
+          categoria?: string | null
+          descripcion?: string | null
+          fecha_gasto?: string | null
+          id?: number | null
+          monto_total?: number | null
+        }
+        Update: {
+          categoria?: string | null
+          descripcion?: string | null
+          fecha_gasto?: string | null
+          id?: number | null
+          monto_total?: number | null
+        }
+        Relationships: []
+      }
+      v_gastos_propiedades: {
+        Row: {
+          depto_numero: string | null
+          direccion: string | null
+          fecha_gasto: string | null
+          gasto_categoria: string | null
+          gasto_descripcion: string | null
+          gasto_id: number | null
+          id: number | null
+          monto_asignado: number | null
+          propiedad_id: number | null
+        }
+        Relationships: []
+      }
+      v_pagos_arriendo: {
+        Row: {
+          arrendatario_id: number | null
+          arrendatario_nombre: string | null
+          contrato_id: number | null
+          depto_numero: string | null
+          direccion: string | null
+          fecha_pago_real: string | null
+          id: number | null
+          mes_correspondiente: string | null
+          monto_arriendo: number | null
+          monto_pagado: number | null
+          monto_pendiente: number | null
+          observaciones: string | null
+          propiedad_id: number | null
+        }
+        Relationships: []
+      }
+      v_propiedades: {
+        Row: {
+          depto_numero: string | null
+          direccion: string | null
+          id: number | null
+        }
+        Insert: {
+          depto_numero?: string | null
+          direccion?: string | null
+          id?: number | null
+        }
+        Update: {
+          depto_numero?: string | null
+          direccion?: string | null
+          id?: number | null
         }
         Relationships: []
       }
@@ -262,19 +154,56 @@ export type Database = {
           race_id: string | null
           short_date: string | null
           team_name: string | null
+          tournament_id: string | null
         }
-        Relationships: [
-          {
-            foreignKeyName: "race_results_pilot_id_fkey"
-            columns: ["pilot_id"]
-            isOneToOne: false
-            referencedRelation: "pilots"
-            referencedColumns: ["id"]
-          },
-        ]
+        Relationships: []
       }
     }
     Functions: {
+      crear_arrendatario: {
+        Args: {
+          p_email: string
+          p_nombre_completo: string
+          p_rut: string
+          p_telefono: string
+        }
+        Returns: number
+      }
+      crear_contrato: {
+        Args: {
+          p_arrendatario_id: number
+          p_estado?: string
+          p_fecha_inicio: string
+          p_fecha_termino: string
+          p_monto_arriendo_pactado: number
+          p_monto_garantia: number
+          p_propiedad_id: number
+        }
+        Returns: number
+      }
+      crear_gasto: {
+        Args: {
+          p_categoria: string
+          p_descripcion: string
+          p_fecha_gasto: string
+          p_monto_total: number
+          p_propiedad_id?: number
+        }
+        Returns: number
+      }
+      crear_pago: {
+        Args: {
+          p_contrato_id: number
+          p_mes_correspondiente: string
+          p_monto_pagado: number
+          p_observaciones?: string
+        }
+        Returns: number
+      }
+      crear_propiedad: {
+        Args: { p_depto_numero: string; p_direccion: string }
+        Returns: number
+      }
       get_next_race_in_window: {
         Args: never
         Returns: {
@@ -315,6 +244,21 @@ export type Database = {
           positions_penalized: number
         }[]
       }
+      get_races_results: {
+        Args: { p_tournament_code: string }
+        Returns: {
+          circuit_name: string
+          has_fast_lap: boolean
+          has_penalties: boolean
+          is_winner: boolean
+          net_points: number
+          pilot_id: string
+          pilot_name: string
+          race_id: string
+          short_date: string
+          team_name: string
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never
@@ -333,12 +277,12 @@ export type Tables<
   DefaultSchemaTableNameOrOptions extends
     | keyof (DefaultSchema["Tables"] & DefaultSchema["Views"])
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
         DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Views"])
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -362,11 +306,11 @@ export type TablesInsert<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -387,11 +331,11 @@ export type TablesUpdate<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -412,11 +356,11 @@ export type Enums<
   DefaultSchemaEnumNameOrOptions extends
     | keyof DefaultSchema["Enums"]
     | { schema: keyof DatabaseWithoutInternals },
-  EnumName extends DefaultSchemaEnumNameOrOptions extends {
+  EnumName extends (DefaultSchemaEnumNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaEnumNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -429,11 +373,11 @@ export type CompositeTypes<
   PublicCompositeTypeNameOrOptions extends
     | keyof DefaultSchema["CompositeTypes"]
     | { schema: keyof DatabaseWithoutInternals },
-  CompositeTypeName extends PublicCompositeTypeNameOrOptions extends {
+  CompositeTypeName extends (PublicCompositeTypeNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"]
-    : never = never,
+    : never) = never,
 > = PublicCompositeTypeNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
