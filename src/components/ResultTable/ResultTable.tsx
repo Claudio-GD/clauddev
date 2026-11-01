@@ -3,7 +3,7 @@ import { useState } from "react"
 import { ResultRace } from "@/components/ResultRace"
 import { Leyend } from "@/components/ResultTable/Leyend"
 
-import useActiveRaces, { type ActiveRow } from "@/hooks/useActiveRaces"
+import useActiveRaces from "@/hooks/useActiveRaces"
 import useSeasonStandings from "@/hooks/useSeasonStandings"
 
 type ResultTableProps = {
@@ -14,7 +14,8 @@ export const ResultTable = ({ tournamentCode }: ResultTableProps) => {
   const [open, setOpen] = useState(false)
   const [pilotId, setPilotId] = useState<string | null>(null)
   const [raceId, setRaceId] = useState<string | null>(null)
-  const { activeRaces, isLoading: loadingActiveRaces } = useActiveRaces()
+  const { activeRaces, isLoading: loadingActiveRaces } =
+    useActiveRaces(tournamentCode)
   const { standings, isLoading: loadingStandings } =
     useSeasonStandings(tournamentCode)
 
@@ -39,7 +40,7 @@ export const ResultTable = ({ tournamentCode }: ResultTableProps) => {
                     Piloto / Equipo
                   </span>
                 </th>
-                {activeRaces?.map((race: ActiveRow) => (
+                {activeRaces?.map((race) => (
                   <th
                     key={race.id}
                     className="px-4 py-4 text-center min-w-[100px]"

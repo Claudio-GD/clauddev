@@ -2,7 +2,7 @@ import { supabase } from "@/supabaseClient"
 import { useQuery } from "@tanstack/react-query"
 import type { Database } from "@/types/supabase"
 
-type ResultRow = Database["public"]["Views"]["v_results_with_details"]["Row"]
+type ResultRow = Database["public"]["Functions"]["get_races_results"]["Returns"]
 
 interface RaceResultDetail {
   points: number
@@ -29,7 +29,7 @@ const useSeasonStandings = (tournamentCode: string) => {
 
       if (error) throw error
 
-      const standingsMap = (data as ResultRow[]).reduce<
+      const standingsMap = (data as ResultRow).reduce<
         Record<string, PilotStandings>
       >((acc, curr) => {
         if (!curr.pilot_id) return acc
