@@ -5,24 +5,18 @@ import { ThemeToggleButton } from "@/components/ThemeToggleButton"
 // import { Header } from "@components/Header"
 // import { Pagination } from '@components/Pagination'
 import { useThemeStore } from "@/store/useThemeStore"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import Podium from "@/components/Podium"
 import { useParams } from "react-router-dom"
 
 type ResultsProps = {
   title: string
-  name: string
-  season: string
   isFinished?: boolean
 }
 
-export function TournamentResults({
-  title,
-  name,
-  season,
-  isFinished = false,
-}: ResultsProps) {
+export function TournamentResults({ title, isFinished = false }: ResultsProps) {
   const { id } = useParams()
+  const [liderName, setLiderName] = useState<string | undefined>("")
 
   const isLight = useThemeStore((state) => state.isLight)
 
@@ -33,7 +27,7 @@ export function TournamentResults({
     if (link) {
       link.setAttribute("href", "/logo.png")
     }
-  }, [])
+  }, [title])
 
   useEffect(() => {
     if (isLight) {
@@ -43,11 +37,13 @@ export function TournamentResults({
     }
   }, [isLight])
 
+  useEffect(() => {}, [id])
+
   const body =
     id !== undefined ? (
       <>
-        <DashboardStats />
-        <ResultTable tournamentCode={id} />
+        <DashboardStats pilotName={liderName} isFinished={isFinished} />
+        <ResultTable setLider={setLiderName} tournamentCode={id} />
       </>
     ) : null
 
@@ -57,7 +53,7 @@ export function TournamentResults({
       <div className="relative flex min-h-screen w-full flex-col group/design-root">
         {/* <Header /> */}
         <main className="flex-1 px-4 md:px-10 py-8 lg:px-20 max-w-[1600px] mx-auto w-full">
-          <TournamentHeader name={name} season={season} isFinished />
+          <TournamentHeader tournamentCode={id !== undefined ? id : ""} />
           {isFinished ? <Podium /> : body}
           {/* <Pagination /> */}
         </main>

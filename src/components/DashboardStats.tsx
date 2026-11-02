@@ -3,13 +3,23 @@ import { NextRace } from "@/components/NextRace"
 import useNextRace from "@/hooks/useNextRace"
 import { StatsSkeleton } from "@/components/StatsSkeleton"
 
-export const DashboardStats = () => {
+type DashboardStatsProp = {
+  pilotName: string | undefined
+  isFinished?: boolean
+}
+
+export const DashboardStats = ({
+  pilotName,
+  isFinished,
+}: DashboardStatsProp) => {
   const [open, setOpen] = useState(false)
   const { nextRace, isLoading, error } = useNextRace()
 
   const handleClickNextRace = () => {
     setOpen(true)
   }
+
+  const pilotStatus = isFinished ? "Ganador " : "Lider "
 
   if (isLoading) return <StatsSkeleton />
   if (error) return <p>Error: {error.message}</p>
@@ -47,9 +57,9 @@ export const DashboardStats = () => {
           </div>
           <div>
             <p className="text-text-muted text-xs font-medium uppercase">
-              Lider del campeonato
+              {pilotStatus} del campeonato
             </p>
-            <p className="text-text font-bold">SMX SAVITAR</p>
+            <p className="text-text font-bold">{pilotName}</p>
           </div>
         </div>
       </div>

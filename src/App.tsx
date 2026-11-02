@@ -16,11 +16,7 @@ function App() {
         <Route
           path="/frd/tournament-results/:id"
           element={
-            <TournamentResults
-              title="V8 Supercars Championship - Tabla de posiciones"
-              name="V8 Supercars Championship"
-              season="Octubre 2026 - Diciembre 2026"
-            />
+            <TournamentResults title="V8 Supercars Championship - Tabla de posiciones" />
           }
         />
         <Route path="*" element={<Navigate to="/" replace />} />
