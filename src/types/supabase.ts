@@ -243,6 +243,15 @@ export type Database = {
           team_name: string
         }[]
       }
+      get_tournament: {
+        Args: { p_tournament_code: string }
+        Returns: {
+          code: string
+          from_to: string
+          is_finished: boolean
+          name: string
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never
