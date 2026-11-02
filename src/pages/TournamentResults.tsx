@@ -5,7 +5,7 @@ import { ThemeToggleButton } from "@/components/ThemeToggleButton"
 // import { Header } from "@components/Header"
 // import { Pagination } from '@components/Pagination'
 import { useThemeStore } from "@/store/useThemeStore"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import Podium from "@/components/Podium"
 import { useParams } from "react-router-dom"
 
@@ -23,6 +23,7 @@ export function TournamentResults({
   isFinished = false,
 }: ResultsProps) {
   const { id } = useParams()
+  const [liderName, setLiderName] = useState<string | undefined>("")
 
   const isLight = useThemeStore((state) => state.isLight)
 
@@ -33,7 +34,7 @@ export function TournamentResults({
     if (link) {
       link.setAttribute("href", "/logo.png")
     }
-  }, [])
+  }, [title])
 
   useEffect(() => {
     if (isLight) {
@@ -46,8 +47,8 @@ export function TournamentResults({
   const body =
     id !== undefined ? (
       <>
-        <DashboardStats />
-        <ResultTable tournamentCode={id} />
+        <DashboardStats pilotName={liderName} isFinished={isFinished} />
+        <ResultTable setLider={setLiderName} tournamentCode={id} />
       </>
     ) : null
 

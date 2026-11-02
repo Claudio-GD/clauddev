@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import { ResultRace } from "@/components/ResultRace"
 import { Leyend } from "@/components/ResultTable/Leyend"
@@ -8,9 +8,10 @@ import useSeasonStandings from "@/hooks/useSeasonStandings"
 
 type ResultTableProps = {
   tournamentCode: string
+  setLider: (v: string | undefined) => void
 }
 
-export const ResultTable = ({ tournamentCode }: ResultTableProps) => {
+export const ResultTable = ({ tournamentCode, setLider }: ResultTableProps) => {
   const [open, setOpen] = useState(false)
   const [pilotId, setPilotId] = useState<string | null>(null)
   const [raceId, setRaceId] = useState<string | null>(null)
@@ -18,6 +19,10 @@ export const ResultTable = ({ tournamentCode }: ResultTableProps) => {
     useActiveRaces(tournamentCode)
   const { standings, isLoading: loadingStandings } =
     useSeasonStandings(tournamentCode)
+
+  useEffect(() => {
+    setLider(standings?.at(0)?.pilot_name)
+  }, [setLider, standings])
 
   if (loadingActiveRaces || loadingStandings) return <div>Loading...</div>
 

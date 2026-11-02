@@ -17,16 +17,6 @@ export type Database = {
       [_ in never]: never
     }
     Views: {
-      v_active_races: {
-        Row: {
-          date: string | null
-          id: string | null
-          name: string | null
-          short_date: string | null
-          year: number | null
-        }
-        Relationships: []
-      }
       v_arrendatarios: {
         Row: {
           email: string | null
