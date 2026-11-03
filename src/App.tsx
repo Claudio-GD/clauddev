@@ -15,9 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route
           path="/frd/tournament-results/:id"
-          element={
-            <TournamentResults title="V8 Supercars Championship - Tabla de posiciones" />
-          }
+          element={<TournamentResults />}
         />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

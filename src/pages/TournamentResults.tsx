@@ -8,26 +8,24 @@ import { useThemeStore } from "@/store/useThemeStore"
 import { useEffect, useState } from "react"
 import Podium from "@/components/Podium"
 import { useParams } from "react-router-dom"
+import useTournament from "@/hooks/useTournament"
 
-type ResultsProps = {
-  title: string
-  isFinished?: boolean
-}
-
-export function TournamentResults({ title, isFinished = false }: ResultsProps) {
+export function TournamentResults() {
   const { id } = useParams()
   const [liderName, setLiderName] = useState<string | undefined>("")
 
   const isLight = useThemeStore((state) => state.isLight)
 
+  const { tournamentData } = useTournament(id !== undefined ? id : "")
+
   useEffect(() => {
-    document.title = title
+    document.title = tournamentData?.name ?? ""
     const link = document.querySelector("link[rel~='icon']")
 
     if (link) {
       link.setAttribute("href", "/logo.png")
     }
-  }, [title])
+  }, [tournamentData?.name])
 
   useEffect(() => {
     if (isLight) {
@@ -37,15 +35,20 @@ export function TournamentResults({ title, isFinished = false }: ResultsProps) {
     }
   }, [isLight])
 
-  useEffect(() => {}, [id])
-
   const body =
     id !== undefined ? (
       <>
-        <DashboardStats pilotName={liderName} isFinished={isFinished} />
+        <DashboardStats
+          pilotName={liderName}
+          isFinished={tournamentData?.is_finished}
+        />
         <ResultTable setLider={setLiderName} tournamentCode={id} />
       </>
     ) : null
+
+  const header = tournamentData ? (
+    <TournamentHeader tournament={tournamentData} />
+  ) : null
 
   return (
     <>
@@ -53,8 +56,8 @@ export function TournamentResults({ title, isFinished = false }: ResultsProps) {
       <div className="relative flex min-h-screen w-full flex-col group/design-root">
         {/* <Header /> */}
         <main className="flex-1 px-4 md:px-10 py-8 lg:px-20 max-w-[1600px] mx-auto w-full">
-          <TournamentHeader tournamentCode={id !== undefined ? id : ""} />
-          {isFinished ? <Podium /> : body}
+          {header}
+          {tournamentData?.is_finished ? <Podium /> : body}
           {/* <Pagination /> */}
         </main>
       </div>
