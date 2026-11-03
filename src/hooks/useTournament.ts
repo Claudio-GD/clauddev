@@ -3,19 +3,22 @@ import type { Database } from "@/types/supabase"
 import { useQuery } from "@tanstack/react-query"
 
 export type TournamentRow =
-  Database["public"]["Functions"]["get_tournament"]["Returns"]
+  Database["public"]["Functions"]["get_tournament"]["Returns"][number]
 
 const useTournament = (tournamentCode: string) => {
-  const { data, isLoading, error } = useQuery({
+  const { data, isLoading, error } = useQuery<TournamentRow | null>({
     queryKey: ["tournament"],
     queryFn: async () => {
-      const { data, error } = await supabase.rpc("get_tournament", {
-        p_tournament_code: tournamentCode,
-      })
+      const { data, error } = await supabase
+        .rpc("get_tournament", {
+          p_tournament_code: tournamentCode,
+        })
+        .maybeSingle()
 
       if (error) throw error
-      return data as TournamentRow
+      return data
     },
+    enabled: !!tournamentCode,
   })
   return { tournamentData: data, isLoading, error }
 }
