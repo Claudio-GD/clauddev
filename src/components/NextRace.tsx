@@ -1,6 +1,5 @@
 import { Dialog, Transition } from "@headlessui/react"
 
-import Map from "@/assets/circuits/Sebring_Track_Map.webp"
 import type { NextRaceRPC } from "@/hooks/useNextRace"
 
 type Props = {
@@ -53,8 +52,7 @@ export const NextRace = ({ open, setOpen, nextRace }: Props) => {
                   Próxima Carrera
                 </h2>
                 <span className="text-gray-400 text-xs font-medium">
-                  {nextRace?.circuit_name} • {nextRace?.race_short_date}{" "}
-                  {nextRace?.race_year}
+                  {nextRace?.name} • {nextRace?.short_date} {nextRace?.year}
                 </span>
               </div>
             </div>
@@ -73,19 +71,19 @@ export const NextRace = ({ open, setOpen, nextRace }: Props) => {
               <div className="w-full h-40 bg-slate-200 rounded-xl flex items-center justify-center mb-4 relative overflow-hidden group">
                 <span className="text-6xl text-slate-400 group-hover:text-slate-500 transition-colors">
                   <img
-                    src={Map}
+                    src="/assets/circuits/Sebring_Track_Map.webp"
                     className="w-70 h-70 object-contain"
                     alt="Mapa del Circuito"
                   />
                 </span>
               </div>
               <h4 className="text-text-muted font-bold text-lg">
-                {nextRace?.circuit_name}
+                {nextRace?.name}
               </h4>
               <h4 className="text-text-muted font-bold text-lg">
-                {nextRace?.circuit_type}
+                {nextRace?.type}
               </h4>
-              <p className="text-text text-sm">{nextRace?.circuit_location}</p>
+              <p className="text-text text-sm">{nextRace?.location}</p>
             </div>
             <div className="grid grid-cols-2 p-6 gap-4">
               <div className="bg-surface p-4 rounded-xl border border-surface-highlight">
@@ -99,7 +97,7 @@ export const NextRace = ({ open, setOpen, nextRace }: Props) => {
                 </div>
                 <div className="flex items-center justify-center gap-3">
                   <p className="text-text font-bold text-lg">
-                    {nextRace?.race_time}
+                    {nextRace?.hour_minutes}
                   </p>
                 </div>
               </div>
@@ -114,7 +112,7 @@ export const NextRace = ({ open, setOpen, nextRace }: Props) => {
                 </div>
                 <div className="flex items-center justify-center gap-3">
                   <p className="text-text font-bold text-lg">
-                    {nextRace?.race_weather}
+                    {nextRace?.weather}
                   </p>
                 </div>
               </div>
@@ -129,7 +127,7 @@ export const NextRace = ({ open, setOpen, nextRace }: Props) => {
                 </div>
                 <div className="flex items-center justify-center gap-3">
                   <p className="text-text font-bold text-lg">
-                    {nextRace?.race_stops} Obligatoria
+                    {nextRace?.stops} Obligatoria
                   </p>
                 </div>
               </div>
@@ -144,7 +142,7 @@ export const NextRace = ({ open, setOpen, nextRace }: Props) => {
                 </div>
                 <div className="flex items-center justify-center gap-3">
                   <p className="text-text font-bold text-lg">
-                    x{nextRace?.race_tires}
+                    x{nextRace?.tires}
                   </p>
                 </div>
               </div>
@@ -163,7 +161,7 @@ export const NextRace = ({ open, setOpen, nextRace }: Props) => {
                       Longitud
                     </span>
                     <span className="text-text text-mono font-bold">
-                      {nextRace?.circuit_large} km
+                      {nextRace?.large} km
                     </span>
                   </div>
                   <div className="flex justify-between items-center group">
@@ -171,7 +169,7 @@ export const NextRace = ({ open, setOpen, nextRace }: Props) => {
                       Curvas
                     </span>
                     <span className="text-text text-mono font-bold">
-                      {nextRace?.circuit_corners}
+                      {nextRace?.corners}
                     </span>
                   </div>
                   <div className="flex justify-between items-center group">
@@ -179,7 +177,7 @@ export const NextRace = ({ open, setOpen, nextRace }: Props) => {
                       Vueltas
                     </span>
                     <span className="text-text text-mono font-bold">
-                      {nextRace?.race_laps}
+                      {nextRace?.laps}
                     </span>
                   </div>
                 </div>
