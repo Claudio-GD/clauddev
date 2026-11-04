@@ -7,7 +7,7 @@ export type TournamentRow =
 
 const useTournament = (tournamentCode: string) => {
   const { data, isLoading, error } = useQuery<TournamentRow | null>({
-    queryKey: ["tournament"],
+    queryKey: ["tournament", tournamentCode],
     queryFn: async () => {
       const { data, error } = await supabase
         .rpc("get_tournament", {
@@ -16,7 +16,7 @@ const useTournament = (tournamentCode: string) => {
         .maybeSingle()
 
       if (error) throw error
-      return data
+      return data as TournamentRow | null
     },
     enabled: !!tournamentCode,
   })

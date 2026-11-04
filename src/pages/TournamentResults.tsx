@@ -37,16 +37,12 @@ export function TournamentResults() {
   const body =
     id !== undefined ? (
       <>
-        {tournamentData ?? (
+        {tournamentData && (
           <DashboardStats pilotName={liderName} tournament={tournamentData} />
         )}
         <ResultTable setLider={setLiderName} tournamentCode={id} />
       </>
     ) : null
-
-  const header = tournamentData ? (
-    <TournamentHeader tournament={tournamentData} />
-  ) : null
 
   return (
     <>
@@ -54,7 +50,7 @@ export function TournamentResults() {
       <div className="relative flex min-h-screen w-full flex-col group/design-root">
         {/* <Header /> */}
         <main className="flex-1 px-4 md:px-10 py-8 lg:px-20 max-w-[1600px] mx-auto w-full">
-          {header}
+          {tournamentData && <TournamentHeader tournament={tournamentData} />}
           {tournamentData?.is_finished ? <Podium /> : body}
         </main>
       </div>

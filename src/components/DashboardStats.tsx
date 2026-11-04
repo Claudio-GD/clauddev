@@ -51,7 +51,7 @@ export const DashboardStats = ({
                   Próxima Carrera
                 </p>
                 <p className="text-text font-bold">
-                  {nextRace?.name} - {nextRace?.short_date} {nextRace?.year}
+                  {nextRace.name} - {nextRace.short_date} {nextRace.year}
                 </p>
               </div>
             </div>
