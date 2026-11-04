@@ -2,24 +2,31 @@ import { useState } from "react"
 import { NextRace } from "@/components/NextRace"
 import useNextRace from "@/hooks/useNextRace"
 import { StatsSkeleton } from "@/components/StatsSkeleton"
+import type { TournamentRow } from "@/hooks/useTournament"
 
 type DashboardStatsProp = {
   pilotName: string | undefined
-  isFinished?: boolean
+  tournament: TournamentRow | undefined | null
 }
 
 export const DashboardStats = ({
   pilotName,
-  isFinished,
+  tournament,
 }: DashboardStatsProp) => {
   const [open, setOpen] = useState(false)
-  const { nextRace, isLoading, error } = useNextRace()
+  const { nextRace, isLoading, error } = useNextRace(
+    tournament ? tournament.code : "",
+  )
 
   const handleClickNextRace = () => {
     setOpen(true)
   }
 
-  const pilotStatus = isFinished ? "Ganador " : "Lider "
+  const pilotStatus = tournament
+    ? tournament.is_finished
+      ? "Ganador "
+      : "Lider "
+    : ""
 
   if (isLoading) return <StatsSkeleton />
   if (error) return <p>Error: {error.message}</p>
@@ -44,8 +51,7 @@ export const DashboardStats = ({
                   Próxima Carrera
                 </p>
                 <p className="text-text font-bold">
-                  {nextRace?.circuit_name} - {nextRace?.race_short_date}{" "}
-                  {nextRace?.race_year}
+                  {nextRace?.name} - {nextRace?.short_date} {nextRace?.year}
                 </p>
               </div>
             </div>

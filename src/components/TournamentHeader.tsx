@@ -1,4 +1,3 @@
-import V8 from "@/assets/v8-supercars.webp"
 import { type TournamentRow } from "@/hooks/useTournament"
 
 type THeaderProps = {
@@ -12,7 +11,7 @@ export const TournamentHeader = ({ tournament }: THeaderProps) => (
       <img
         alt={tournament.name}
         className="w-full h-full object-cover object-center opacity-20 mix-blend-multiply"
-        src={V8}
+        src="/assets/v8-supercars.webp"
       />
     </div>
     <div className="relative z-10 flex flex-col gap-2 max-w-2xl">
