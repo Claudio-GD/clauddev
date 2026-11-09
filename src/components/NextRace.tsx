@@ -71,7 +71,7 @@ export const NextRace = ({ open, setOpen, nextRace }: Props) => {
               <div className="w-full h-40 bg-slate-200 rounded-xl flex items-center justify-center mb-4 relative overflow-hidden group">
                 <span className="text-6xl text-slate-400 group-hover:text-slate-500 transition-colors">
                   <img
-                    src="/assets/circuits/Sebring_Track_Map.webp"
+                    src={nextRace.track_map}
                     className="w-70 h-70 object-contain"
                     alt="Mapa del Circuito"
                   />
