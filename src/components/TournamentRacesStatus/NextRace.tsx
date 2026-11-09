@@ -1,5 +1,6 @@
 import useNextRace from "@/hooks/useNextRace"
 import { useState } from "react"
+import RaceInfo from "../RaceInfo"
 
 type NextRaceProps = {
   tournamentCode: string
@@ -49,12 +50,14 @@ const NextRace = ({
           )}
         </div>
       </div>
-      {showDetails && (
+      {showDetails && nextRace && (
         <details
           className="group bg-white dark:bg-[#1c2720] rounded-2xl shadow-xl border border-slate-200 dark:border-[#28392f] overflow-hidden"
           open={true}
         >
-          <summary className="cursor-pointer p-6">aqui va el detalle</summary>
+          <summary className="cursor-pointer p-6">
+            <RaceInfo nextRace={nextRace} />
+          </summary>
         </details>
       )}
     </>
