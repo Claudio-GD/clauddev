@@ -11,7 +11,7 @@ export const TournamentHeader = ({ tournament }: THeaderProps) => (
       <img
         alt={tournament.name}
         className="w-full h-full object-cover object-center opacity-20 mix-blend-multiply"
-        src="/assets/v8-supercars.webp"
+        src={tournament.cover_photo}
       />
     </div>
     <div className="relative z-10 flex flex-col gap-2 max-w-2xl">

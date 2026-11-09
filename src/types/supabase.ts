@@ -206,6 +206,18 @@ export type Database = {
           year: number
         }[]
       }
+      get_open_tournaments: {
+        Args: never
+        Returns: {
+          code: string
+          completed_races: number
+          id: string
+          lider: string
+          name: string
+          pending_races: number
+          total_races: number
+        }[]
+      }
       get_race_details: {
         Args: { p_pilot_id: string; p_race_id: string }
         Returns: {
@@ -244,10 +256,21 @@ export type Database = {
           team_name: string
         }[]
       }
+      get_status_races_tournament: {
+        Args: { p_tournament_code: string }
+        Returns: {
+          circuit_name: string
+          circuit_type: string
+          finished: boolean
+          race_id: string
+          race_time: string
+        }[]
+      }
       get_tournament: {
         Args: { p_tournament_code: string }
         Returns: {
           code: string
+          cover_photo: string
           from_to: string
           is_finished: boolean
           name: string
